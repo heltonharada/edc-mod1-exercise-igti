@@ -1,0 +1,4 @@
+*.csv
+.DS_Store
+iac/.terraform
+iac/.terraform.lock.hcl
