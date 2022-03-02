@@ -24,7 +24,7 @@ resource "aws_s3_bucket" "dl" {
 
 resource "aws_s3_bucket_acl" "dl" {
   bucket = aws_s3_bucket.dl.id
-  status = "private"
+  acl = "private"
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "dl" {
