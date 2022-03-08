@@ -12,7 +12,8 @@ def handler(event, context):
                 JobFlowRole='EMR_EC2_DefaultRole',
                 VisibleToAllUsers=True,
                 LogUri='s3://datalake-helton-igti-edc-tf/emr-logs',
-                ReleaseLabel='emr-6.3.0',
+                # ReleaseLabel='emr-6.3.0',
+                ReleaseLabel='emr-6.5.0',
                 Instances={
                     'InstanceGroups': [
                         {
@@ -89,7 +90,8 @@ def handler(event, context):
                         'Jar': 'command-runner.jar',
                         'Args': [
                             'spark-submit',
-                            '--packages', 'io.delta:delta-core_2.12:1.0.0',
+                            # '--packages', 'io.delta:delta-core_2.12:1.0.0',
+                            '--packages', 'io.delta:delta-core_2.12:1.1.0',
                             '--conf', 'spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension', 
                                  '--conf', 'spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog', 
                                  '--master', 'yarn',
@@ -104,7 +106,8 @@ def handler(event, context):
                     'HadoopJarStep': {
                         'Jar': 'command-runner.jar',
                         'Args': ['spark-submit',
-                                 '--packages', 'io.delta:delta-core_2.12:1.0.0', 
+                                #  '--packages', 'io.delta:delta-core_2.12:1.0.0',
+                                 '--packages', 'io.delta:delta-core_2.12:1.1.0',
                                  '--conf', 'spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension', 
                                  '--conf', 'spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog', 
                                  '--master', 'yarn',
