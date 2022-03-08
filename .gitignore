@@ -3,3 +3,5 @@
 .terraform
 .terraform.lock.hcl
 lambda_function_payload.zip
+helton-igti-teste.pem
+airflow_variables.json
