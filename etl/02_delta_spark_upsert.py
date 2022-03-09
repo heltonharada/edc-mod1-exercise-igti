@@ -11,8 +11,8 @@ logger.setLevel(logging.DEBUG)
 
 # Definicao da Spark Session
 spark = (SparkSession.builder.appName("DeltaExercise")
-    # .config("spark.jars.packages", "io.delta:delta-core_2.12:1.0.0")
-    .config("spark.jars.packages", "io.delta:delta-core_2.12:1.1.0")
+    .config("spark.jars.packages", "io.delta:delta-core_2.12:1.0.0")
+    # .config("spark.jars.packages", "io.delta:delta-core_2.12:1.1.0")
     .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
     .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
     .getOrCreate()
