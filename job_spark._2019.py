@@ -14,7 +14,7 @@ enem = (
     .option("header", True)
     .option("inferSchema", True)
     .option("delimiter", ";")
-    .load("s3://datalake-helton-739010676765/raw-data/ENEM_2019.csv")
+    .load("s3://datalake-helton-739010676765/raw-data/enem/ENEM_2019.csv")
 )
 
 (

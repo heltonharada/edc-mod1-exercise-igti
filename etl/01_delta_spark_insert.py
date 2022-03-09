@@ -19,7 +19,7 @@ enem = (
     .option("inferSchema", True)
     .option("header", True)
     .option("delimiter", ";")
-    .load("s3://datalake-helton-739010676765/raw-data/ENEM_2019.csv")
+    .load("s3://datalake-helton-739010676765/raw-data/enem")
     # vai ter q arrumar pastas datalake raw
 )
 
@@ -31,6 +31,6 @@ print("Writing delta table...")
     .mode("overwrite")
     .format("delta")
     ##vai ter q arrumar pastas, partições por ano...
-    # .partitionBy("year")
+    .partitionBy("year")
     .save("s3://datalake-helton-igti-edc-tf/staging-zone/enem")
 )
