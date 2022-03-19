@@ -2,7 +2,7 @@
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/version-4-upgrade)
 
 # resource "aws_s3_bucket_object" "job_spark" {
-resource "aws_s3_object" "job_spark" {
+resource "aws_s3_object" "job_spark_2019" {
   # bucket = aws_s3_bucket.datalake.id
   bucket = aws_s3_bucket.dl.id
 
